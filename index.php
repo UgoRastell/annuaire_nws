@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+  <section class="logo">
+    <img src="./media/logo_nws.svg" alt="">
+  </section>
+
   <section class="input_add">
     <form method="post" action="" enctype="multipart/form-data">
         <label>Prenom</label>
@@ -18,8 +22,7 @@
         <input type="text" name="mail">
         <label>Numéro de téléphone</label>
         <input type="text" name="numero">
-        <label>Ajouter une image</label>
-        <input type="file" name="image">
+        <label>Contexte</label>
         <input type="submit" value="Ajouter" name="btn-ajouter"/>
         <a class="btn-annuaire" href="action.php">Annuaire</a>
     </form>

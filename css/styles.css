@@ -11,7 +11,21 @@ body {
     background-color: #1695DA;
 }
 
-/* formulaire pour ajouter un élève ou un intervenant */
+/* Logo */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 100px;
+}
+
+.logo img {
+    height: 100vh;
+    width: 100vh;
+}
+
+/* formulaire pour ajouter dans la base de donné */
 
 .input_add{
     display: flex;
