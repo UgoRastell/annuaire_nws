@@ -22,9 +22,9 @@
         <input type="text" name="mail">
         <label>Numéro de téléphone</label>
         <input type="text" name="numero">
-        <label>Contexte</label>
         <input type="submit" value="Ajouter" name="btn-ajouter"/>
-        <a class="btn-annuaire" href="action.php">Annuaire</a>
+        <input type="submit" value="Annuaire" name="btn-annuaire" class="btn-annuaire"/>
+        
     </form>
   </section>
 
