@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+}
+
+.logo img {
+    height: 50vh;
+    width: 50vh;
+}
+
+/* page resultat */
+
+.result{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-content{
+    background-color: #fff;
+    width: 40%;
+    border: 6px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.result-content a{
+    color: #1695DA;
+    text-decoration: 0;
+}
+
+.result-content a:hover{
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #fff;
+}
+
+.result-content h3{
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.liste-personne{
+    max-height: 400px;
+    overflow: auto;
+}
+
+.personne{
+    margin: 20px 0;
+    height: 100px;
+    display: flex;
+}
+
+.personne{
+    height: 100%;
+    width: 100px;
+}
+
+.personne{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.personne .text{
+    margin-left: 15px;
+    overflow: hidden;
+    width: 80%;
+}
+
+.personne .text .nomPrenom{
+    text-transform: uppercase;
+}
+
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #00A5A5;
+    margin-top: 15px;
+  }
+
+
+
+@media(max-width:745px){
+    .result-content{
+        width: 80%;
+    }
+}
