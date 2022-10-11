@@ -30,7 +30,3 @@ class Student extends Person
         $this->last_diplome = $lastDiplome;
     }
 }
-
-$personne1 = new Student("ugo", "rastell", 19, "050505050", "zzgzgzgg<à@zzfzef.com", "developpement web", "bac sti2d");
-
-print_r($personne1);
