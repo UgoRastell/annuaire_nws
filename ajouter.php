@@ -13,11 +13,6 @@
     <form method="post" action="" enctype="multipart/form-data">
       <div class="message">
       </div>
-        <label>Catégories</label>
-        <select name="categorie">
-          <option value="intervenant">Intervant</option>
-          <option value="eleve">élève</option>
-        </select>
         <label>Prenom</label>
         <input type="text" name="prenom">
         <label>Nom</label>
@@ -26,6 +21,14 @@
         <input type="text" name="mail">
         <label>Numéro de téléphone</label>
         <input type="text" name="numero">
+        <label>Diplome</label>
+        <input type="text" name="diplome">
+        <label>Genre</label>
+        <input type="radio" name="genre" value="TEST">
+        <label>Spécialités</label>
+        <select name="speciality" id="">
+          <option value=""></option>
+        </select>
         <input type="submit" value="Ajouter" name="btn-ajouter"/>
         <a class="btn-liste-prod" href="action.php">Aller voir l'annuaire</a>
     </form>

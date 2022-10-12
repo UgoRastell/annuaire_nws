@@ -58,7 +58,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #fff;
+    background-color: #E94A34;
 }
 
 .result-content h3{
@@ -73,23 +73,20 @@ body {
 }
 
 .personne{
-    margin: 20px 0;
-    height: 100px;
-}
-
-.personne{
     height: 100%;
     width: 100px;
-}
-
-.personne{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    margin: 20px 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .personne .text{
-    margin-left: 15px;
+    margin-left: 25px;
     overflow: hidden;
     width: 80%;
 }
@@ -144,7 +141,7 @@ textarea{
     margin-bottom: 15px;
 }
 
-select{
+.input_add form input[type = "radio"]{
     margin-bottom: 15px;
 }
 
@@ -152,15 +149,11 @@ select{
     margin-bottom: 15px;
 }
 
-.input_add form input[type = "file"]{
-    margin-bottom: 15px;
-}
-
 .btn-liste-prod, .input_add form input[type = "submit"]{
     padding: 5px 8px;
     border: 0;
     outline: 0;
-    background-color: blue;
+    background-color: #E94A34;
     color: #fff;
     border-radius: 6px;
     font-size: 14px;

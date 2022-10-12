@@ -1,3 +1,19 @@
+<?php
+require_once './database.php';
+$pdo = getPDO();
+
+$sql = "SELECT * from photo_student inner join student on photo_id = student_id";
+
+$query = $pdo->prepare($sql);
+
+$query->execute();
+
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,70 +34,28 @@
             <h3>ANNUAIRE</h3>
             <a href="">AJOUTER</a>
             <div class="liste-personne">
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
+
+              <?php
+              foreach ($result as $row)
+              {
+              ?>
+
+                <div class="personne">
+                  <div class="photo_student">
+                                        <img src="./assets/profil_student/<?= $row['photo_directory'] ?>" width='50' height='80' alt=> 
+                                </div>
+                  <div class="text">
+                    <strong><p class="nomPrenom"> Prénom et nom : <a href=""><?= $row['student_prenom'] . " " . $row['student_nom'] ?></p></a></strong>
+                    <p class="email"> Adresse mail :  <?= $row['student_email'] ?></p>
+                    <p class="numeroTelephone">Numéro de télephone : <?= $row['student_numero_telephone'] ?></p>
+                    <hr class="solid">
+                  </div>
                 </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
-              <div class="personne">
-                <div class="text">
-                  <strong><p class="nomPrenom"></p>Ugo Rastell</strong>
-                  <p class="email">fzfzfzf@fsfsfsfsf.com</p>
-                  <p class="numeroTelephone">1651651565</p>
-                  <hr class="solid">
-                </div>
-              </div>
+
+              <?php
+              }
+              ?>
+
             </div>
         </div>
   </div>
