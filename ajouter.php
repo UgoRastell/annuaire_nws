@@ -24,12 +24,10 @@
         <input type="text" name="nom">
         <label>Mail</label>
         <input type="text" name="mail">
-        <label>Numéro</label>
+        <label>Numéro de téléphone</label>
         <input type="text" name="numero">
-        <label>Ajouter une image</label>
-        <input type="file" name="image">
         <input type="submit" value="Ajouter" name="btn-ajouter"/>
-        <a class="btn-liste-prod" href="action.php">Aller vour l'annuaire</a>
+        <a class="btn-liste-prod" href="action.php">Aller voir l'annuaire</a>
     </form>
   </section>
 </body>

@@ -17,7 +17,7 @@ body {
 .logo {
     display: flex;
     justify-content: center;
-    height: 15vh;
+    height: 20vh;
 }
 
 .logo img {
@@ -44,7 +44,7 @@ body {
 }
 
 .result-content a{
-    color: #1695DA;
+    color: #E94A34;
     text-decoration: 0;
 }
 
@@ -75,7 +75,6 @@ body {
 .personne{
     margin: 20px 0;
     height: 100px;
-    display: flex;
 }
 
 .personne{
