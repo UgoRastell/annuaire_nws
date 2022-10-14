@@ -21,8 +21,8 @@ body {
 }
 
 .logo img {
-    height: 50vh;
-    width: 50vh;
+    height: 40vh;
+    width: 40vh;
 }
 
 /* page resultat */
@@ -43,9 +43,23 @@ body {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
-.result-content a{
+.btn-blue {
+    color: #00A5A5;
+    padding: 8px;
+    background-color: #FEC800;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.result-content .btn-info{
     color: #E94A34;
-    text-decoration: 0;
+}
+
+a{
+    color: #E94A34;
+    text-decoration: none;
 }
 
 .result-content a:hover{
@@ -83,6 +97,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .personne .text{
@@ -164,6 +179,10 @@ textarea{
     text-align: center;
     margin-top: 10px;
 }
+
+/* page infos*/
+
+
 
 
 

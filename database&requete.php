@@ -11,3 +11,20 @@ function getPDO()
     return $db;
 }
 
+$pdo = getPDO();
+
+function sql($requete)
+{
+  global $pdo;
+
+  $sql = $requete;
+
+  $query = $pdo->prepare($sql);
+
+  $query->execute();
+
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+  return $result;
+}
+

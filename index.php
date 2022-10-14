@@ -1,14 +1,10 @@
 <?php
-require_once './database.php';
-$pdo = getPDO();
+require_once "./database&requete.php";
 
-$sql = "SELECT * from photo_student inner join student on photo_id = student_id";
+$pdo= getPDO();
 
-$query = $pdo->prepare($sql);
-
-$query->execute();
-
-$result = $query->fetchAll(PDO::FETCH_ASSOC);
+$result =sql("SELECT * from photo_student inner join student on photo_id = student_id");
+$countStudent=sql("SELECT count(*) from student");
 
 ?>
 
@@ -31,21 +27,22 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="result">
        <div class="result-content">
-            <h3>ANNUAIRE</h3>
-            <a href="">AJOUTER</a>
+            <h3>ANNUAIRE<br><?=$countStudent[0]['count(*)']?> Étudiants</h3>
+            <a href="http://localhost/annuaire_nws/ajouter.php" class ="btn-blue"><strong>AJOUTER</strong></a>
             <div class="liste-personne">
 
               <?php
               foreach ($result as $row)
               {
+                $id = $row['student_id'];
               ?>
 
                 <div class="personne">
                   <div class="photo_student">
-                                        <img src="./assets/profil_student/<?= $row['photo_directory'] ?>" width='50' height='80' alt=> 
+                                        <img src="./assets/profil_student/<?= $row['photo_directory'] ?>" width='50' height='80'> 
                                 </div>
                   <div class="text">
-                    <strong><p class="nomPrenom"> Prénom et nom : <a href=""><?= $row['student_prenom'] . " " . $row['student_nom'] ?></p></a></strong>
+                    <strong><p class="nomPrenom"> Prénom et nom : <a id="btn-info" href="<?= "infos_student.php?id=".$id ?>"><?= $row['student_prenom'] . " " . $row['student_nom'] ?></p></a></strong>
                     <p class="email"> Adresse mail :  <?= $row['student_email'] ?></p>
                     <p class="numeroTelephone">Numéro de télephone : <?= $row['student_numero_telephone'] ?></p>
                     <hr class="solid">
