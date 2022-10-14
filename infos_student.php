@@ -1,23 +1,23 @@
 <?php
-require_once './database.php';
+require_once './database&requete.php';
+require_once './models/Student.php';
+
 $id=$_REQUEST['id'];
-echo $id;
-$pdo = getPDO();
 
-$sql = "SELECT * from student WHERE student_id =$id";
-
-$query = $pdo->prepare($sql);
-
-$query->execute();
-
-$row = $query->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($row as $result)
+foreach ($result as $row)
 {
-  $prenom = $result['student_prenom'];
-  $nom = $result['student_nom'];
-  $mail = $result['student_email'];
-  $numero_telephone = $result['student_numero_telephone'];
+  $prenom = $row['student_prenom'];
+  $nom = $row['student_nom'];
+  $numero_telephone = $row['student_numero_telephone'];
+  $age = $row['student_age'];
+  $adresse = $row['student_adresse'];
+  $speciality = $row['student_speciality'];
+  $mail = $row['student_email'];
+  $genre = $row['student_genre'];
+
+
+  $student = new Student($prenom, $nom, $age, $numero_telephone, $mail, $speciality, $adresse, $genre, $adresse);
+  $read = $student->readStudent();
 }
 
 ?>
@@ -35,17 +35,16 @@ foreach ($row as $result)
     <title>Accueil annuaire NWS</title>
 </head>
 <body>
-  <div class="logo">
-    <img src="./assets/media/logo_nws.svg" alt="">
-</div>
-
   <div class="result_info">
             <h3>Infos personnelles de</h3>
             <div class="personne_info">
                 <div class="text">
-                  <strong><p class="nomPrenom"> Prénom et nom : <?= $prenom . " " . $nom ?></p></strong>
-                  <p class="email"> Adresse mail :  <?= $mail ?></p>
+                  <strong><p class="nomPrenom"> Prénom et nom : <?= $prenom. " " . $nom ?></p></strong>
+                  <p class="adresse">Âge : <?= $age?></p>
+                  <p class="age"> Adresse mail :  <?= $mail ?></p>
+                  <p class="email"> Adresse :  <?= $adresse ?></p>
                   <p class="numeroTelephone">Numéro de télephone : <?= $numero_telephone ?></p>
+                  <p class="speciality">Spécialité voulus: <?= $speciality?></p>
                 </div>
             </div>
         </div>

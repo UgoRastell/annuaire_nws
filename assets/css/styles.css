@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 html {
@@ -14,16 +17,7 @@ body {
 
 /* Logo */
 
-.logo {
-    display: flex;
-    justify-content: center;
-    height: 20vh;
-}
 
-.logo img {
-    height: 40vh;
-    width: 40vh;
-}
 
 /* page resultat */
 
@@ -36,7 +30,7 @@ body {
 
 .result-content{
     background-color: #fff;
-    width: 40%;
+    width: 70%;
     border: 6px;
     padding: 20px;
     border-radius: 6px;
@@ -44,11 +38,13 @@ body {
 }
 
 .btn-blue {
+    font-family: 'Fugaz One', sans-serif;
     color: #00A5A5;
     padding: 8px;
     background-color: #FEC800;
     border-radius: 10px;
     position: relative;
+    margin-left: 900px;
     z-index: 1;
 }
 
@@ -66,6 +62,15 @@ a{
     text-decoration: underline;
 }
 
+.photo_student img{
+    width:75px;
+    height:100px;
+    border-radius: 15px;
+    padding: 10px
+}
+
+/* scrollbar */
+
 ::-webkit-scrollbar{
     width: 8px;
     height: 5px;
@@ -76,6 +81,7 @@ a{
 }
 
 .result-content h3{
+    font-family: 'Fugaz One', sans-serif;
     text-align: center;
     margin-top: 10px;
     text-transform: uppercase;
