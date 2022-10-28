@@ -3,13 +3,14 @@
 
 class Database {
 	private $host="localhost";
-    private $user="root";
-    private $password="";
-    private $dbName="annuaire_nws";
+  private $user="root";
+  private $password="";
+  private $dbName="annuaire_nws";
 
     protected function connexionDB()
     {
         $db = new PDO('mysql:host=localhost;dbname=annuaire_nws','root','',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
         return $db;
@@ -32,7 +33,7 @@ class Students extends Database
               <img src=./assets/profil_student/".$row['photo_directory'].">
             </div>
             <div class=text>
-              <strong><p class=nomPrenom> Prénom et nom : <a id=btn-info href=infos_student.php?id=.$id>".$row['student_prenom'] . " " . $row['student_nom']."</p></a></strong>
+              <strong><p class=nomPrenom> Prénom et nom : <a id=btn-info href=infos_student.php?id=$id>".$row['student_prenom'] . " " . $row['student_nom']."</p></a></strong>
               <p class=email> Adresse mail : ".$row['student_email']."</p>
               <p class=numeroTelephone>Numéro de télephone : ".$row['student_numero_telephone']."</p>
               <hr class=solid>
@@ -44,7 +45,7 @@ class Students extends Database
     public function getSoloStudent()
     {
         $id=$_REQUEST['id'];
-        $sql="SELECT * from photo_student inner join student on photo_id = $id";
+        $sql="SELECT * from student inner join photo_id on student = $id";
         $stmt = $this->connexionDB()->query($sql);
         
         foreach($stmt->fetchAll() as $row)
@@ -55,7 +56,7 @@ class Students extends Database
               <img src=./assets/profil_student/".$row['photo_directory'].">
             </div>
             <div class=text>
-              <strong><p class=nomPrenom> Prénom et nom : <a id=btn-info href=infos_student.php?id=.$id>".$row['student_prenom'] . " " . $row['student_nom']."</p></a></strong>
+              <strong><p class=nomPrenom> Prénom et nom : ".$row['student_prenom'] . " " . $row['student_nom']."</p></strong>
               <p class=email> Adresse mail : ".$row['student_email']."</p>
               <p class=numeroTelephone>Numéro de télephone : ".$row['student_numero_telephone']."</p>
               <hr class=solid>
@@ -70,11 +71,6 @@ class Students extends Database
     }
 
     public function updateStudents()
-    {
-        
-    }
-
-    public function Students()
     {
         
     }

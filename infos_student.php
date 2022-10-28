@@ -1,8 +1,6 @@
 <?php
 require_once "./models/Database_requete.php";
 
-$id=$_REQUEST['id'];
-
 
 
 ?>
