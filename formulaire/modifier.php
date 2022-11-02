@@ -92,7 +92,7 @@ if(isset($_POST['btn-ajouter']))
       </div>
         <input class="form-control-file" name="image" type="file" id="formFile">
       <br>
-      <input type="submit" class="btn btn-primary mt-3 mb-3" name="btn-ajouter" value="Ajouter"><br>
+      <input type="submit" class="btn btn-primary mt-3 mb-3" name="btn-modifier" value="Modifier"><br>
       <a class="btn btn-primary" href="../index.php" role="button">ACCUEIL</a>
     </form>
   </div>
@@ -102,4 +102,3 @@ if(isset($_POST['btn-ajouter']))
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>
 </html>
-

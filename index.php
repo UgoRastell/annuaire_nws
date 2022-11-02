@@ -19,7 +19,7 @@ require_once "./models/Database_requete.php";
   <div class="result">
        <div class="result-content">
             <h3>ANNUAIRE<br>Étudiants</h3>
-            <a href="connexion.php" class ="btn-blue"><strong>Modifier</strong></a>
+            <a href="./formulaire/ajouter.php" class ="btn-blue"><strong>AJOUTER</strong></a>
             <div class="liste-personne">
               
             <?php
