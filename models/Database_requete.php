@@ -122,5 +122,49 @@ class Students extends Database
       $stmt = $this->connexionDB()->query($sql);
 
     }
+
+    public function searchStudents()
+    {
+      $ok = '0';
+        $recherche = htmlspecialchars($_POST['chercher']);
+        $sql="SELECT * FROM student WHERE student_prenom LIKE '%$recherche%';";
+        $stmt = $this->connexionDB()->query($sql);
+
+        if ($stmt) {
+         while ($etudiant = $stmt->fetch()) 
+         {
+          echo "
+            <br>
+            <br>
+            <br>
+            <div class=container>
+              <div class=card>
+              <div class=row g-0>
+                <div class=col-md-3 align-items-center>
+                  <img src=./assets/profil_student/".$etudiant['student_prenom']." class=img-fluid rounded-start>
+                </div>
+                <div class=col-md-8>
+                  <div class=card-body>
+                    <h5 class=card-title>".$etudiant['student_prenom']."</h5>
+                    <p class=card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <br>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ";
+         }
+        }else {
+          echo 'aucun etudiant trouvé';
+          echo $etudiant['student_prenom'];
+        }
+    
+    }
+
+    public function filterStudents()
+    {
+      
+    }
 }
 

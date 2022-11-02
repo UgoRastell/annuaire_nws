@@ -1,7 +1,7 @@
 <?php
 require_once "../models/Database_requete.php";
 
-if(isset($_POST['btn-ajouter']))
+if(isset($_POST['btn-modifier']))
 {
   
   if(isset($_FILES['image']))
@@ -17,7 +17,7 @@ if(isset($_POST['btn-ajouter']))
     {
       //inserer le titre ,la description  et le nom de l'image dans la base de donnée 
       $test= new Students();
-      $test->addStudents();
+      $test->updateStudents();
 
     }else {
       echo 'error';
