@@ -46,11 +46,11 @@ if(isset($_POST['btn-ajouter']))
     <title>Ajouter un élève</title>
 </head>
 <body>
-<nav class="navbar bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">Accueil</a>
-  </div>
-</nav>
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.php">Accueil</a>
+    </div>
+  </nav>
 
   <div class="container mt-4">
     <h2>Ajouter un Étudiant</h2>

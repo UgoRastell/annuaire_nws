@@ -25,6 +25,11 @@ if(isset($_POST['btn-supp']))
     <title>Accueil annuaire NWS</title>
 </head>
 <body>
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.php">Accueil</a>
+    </div>
+  </nav>
 
   <?php
   $test= new Students();

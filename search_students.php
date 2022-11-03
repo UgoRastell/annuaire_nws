@@ -13,6 +13,11 @@ require_once "./models/Database_requete.php";
     <title>Document</title>
 </head>
 <body>
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.php">Accueil</a>
+    </div>
+  </nav>
     <h2>Rechercher un étudiant</h2>
     <form method="post">
         <input type="search" name="chercher" placeholder="Rechercher un etudiant">
