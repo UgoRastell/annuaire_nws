@@ -1,7 +1,5 @@
 <?php
 require_once "./models/Database_requete.php";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +15,7 @@ require_once "./models/Database_requete.php";
 <body>
     <h2>Rechercher un étudiant</h2>
     <form method="post">
-        <input type="search" name="chercher" placeholder="Recher un etudiant">
+        <input type="search" name="chercher" placeholder="Rechercher un etudiant">
         <input type="submit" name="envoyer">
     </div>
 

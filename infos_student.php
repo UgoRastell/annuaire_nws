@@ -3,6 +3,7 @@ require_once "./models/Database_requete.php";
 $id= $_REQUEST['id'];
 if(isset($_POST['btn-supp'])) 
 {
+  echo '<script></script>';
   $test= new Students();
   $test->deleteStudents();
 }else {
@@ -30,7 +31,7 @@ if(isset($_POST['btn-supp']))
   $test->getSoloStudent();
   ?>
   <br>
-  <form method="post" action="" enctype="multipart/form-data">
+  <form method="post" action="" enctype="multipart/form-data" onsubmit="return confirm('êtes vous sûr de vouloir supprimer cet item?');">
     <input type="submit" class="btn btn-danger mt-3 mb-3" name="btn-supp" value="Supprimer">
     <a class="btn btn-warning" role="button" href="http://localhost/annuaire_nws/formulaire/modifier.php?id=<?=$id?>">Modfier</a>
 

@@ -22,7 +22,8 @@ require_once "./models/Database_requete.php";
     
        <div class="result-content">
             <h3>ANNUAIRE<br>Étudiants</h3>
-            <a href="./formulaire/ajouter.php" class ="btn-blue"><strong>AJOUTER</strong></a>
+            <a class="btn btn-primary mb-2" role="button" href="./formulaire/ajouter.php">Ajouter</a>
+            <a class="btn btn-warning mb-2" role="button" href="http://localhost/annuaire_nws/search_students.php">Chercher</a>
             
             <div class="liste-personne">
               
@@ -30,10 +31,7 @@ require_once "./models/Database_requete.php";
             $test= new Students();
             $test->getAllStudents();
             ?>
-
-            </div>
-            <a class="btn btn-warning pull-left" role="button" href="">Chercher</a>
-            <a class="btn btn-warning pull-left" role="button" href="">Filtrer</a>
+            </div>       
         </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

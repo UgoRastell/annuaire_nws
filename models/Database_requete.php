@@ -28,7 +28,7 @@ class Students extends Database
         {
             $id = $row['student_id'];
             echo "
-            <div class=personne>
+          <div class=personne>
             <div class=photo_student>
               <img src=./assets/profil_student/".$row['photo_student'].">
             </div>
@@ -125,7 +125,6 @@ class Students extends Database
 
     public function searchStudents()
     {
-      $ok = '0';
         $recherche = htmlspecialchars($_POST['chercher']);
         $sql="SELECT * FROM student WHERE student_prenom LIKE '%$recherche%';";
         $stmt = $this->connexionDB()->query($sql);
@@ -157,14 +156,8 @@ class Students extends Database
          }
         }else {
           echo 'aucun etudiant trouvé';
-          echo $etudiant['student_prenom'];
         }
     
-    }
-
-    public function filterStudents()
-    {
-      
     }
 }
 
