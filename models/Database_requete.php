@@ -159,5 +159,10 @@ class Students extends Database
         }
     
     }
+
+    public function filterStudents()
+    {
+      
+    }
 }
 

@@ -1,6 +1,5 @@
 <?php
 require_once "./models/Database_requete.php";
-
 ?>
 
 
@@ -19,18 +18,22 @@ require_once "./models/Database_requete.php";
 <body>
 
   <div class="result">
-    
        <div class="result-content">
             <h3>ANNUAIRE<br>Étudiants</h3>
-            <a class="btn btn-primary mb-2" role="button" href="./formulaire/ajouter.php">Ajouter</a>
-            <a class="btn btn-warning mb-2" role="button" href="http://localhost/annuaire_nws/search_students.php">Chercher</a>
+            <form method="POST">
+              <button class="btn btn-primary" type="filter">A-Z</button>
+              <button class="btn btn-primary" type="filter2">Z-A</button>
+            </form>
+            <a class="btn btn-primary mb-3 mt-2" role="button" href="./formulaire/ajouter.php">Ajouter</a>
+            <a class="btn btn-warning mb-3 mt-2" role="button" href="http://localhost/annuaire_nws/search_students.php">Chercher</a>
+
+            
             
             <div class="liste-personne">
-              
-            <?php
-            $test= new Students();
-            $test->getAllStudents();
-            ?>
+              <?php
+              $test= new Students();
+              $test->getAllStudents();
+              ?>
             </div>       
         </div>
   </div>
