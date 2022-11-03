@@ -15,14 +15,16 @@ require_once "./models/Database_requete.php";
 <body>
   <nav class="navbar bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php">Accueil</a>
+      <a class="navbar-brand" href="./index.php">Accueil</a>
     </div>
   </nav>
-    <h2>Rechercher un étudiant</h2>
+  <div class=container>
+    <h2 class="mt-3">Rechercher un étudiant avec son prénom</h2>
     <form method="post">
-        <input type="search" name="chercher" placeholder="Rechercher un etudiant">
+        <input class="mt-3" type="search" name="chercher" placeholder="Rechercher un etudiant">
         <input type="submit" name="envoyer">
     </div>
+  </div>
 
     <section>
         <?php

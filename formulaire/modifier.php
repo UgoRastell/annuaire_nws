@@ -4,8 +4,8 @@ require_once "../models/Database_requete.php";
 if(isset($_POST['btn-modifier']))
 {
   
-  if(isset($_FILES['image']))
-  {
+  
+
     $img_nom = $_FILES['image']['name']; //récupère le nom de l'image 
     $tmp_nom = $_FILES['image']['tmp_name']; //définire un nom temporaire
 
@@ -13,21 +13,9 @@ if(isset($_POST['btn-modifier']))
   
     $deplacer_image = move_uploaded_file($tmp_nom,"../assets/profil_student/".$image) ;
   
-    if($deplacer_image)
-    {
-      //inserer le titre ,la description  et le nom de l'image dans la base de donnée 
-      $test= new Students();
-      $test->updateStudents();
-
-    }else {
-      echo 'error';
-    }
-
-    
-
-  var_dump($_POST);
-  }
-  
+    //inserer le titre ,la description  et le nom de l'image dans la base de donnée 
+    $test= new Students();
+    $test->updateStudents();
 
 }
   
@@ -42,7 +30,7 @@ if(isset($_POST['btn-modifier']))
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="media/favicon_nws.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Ajouter un élève</title>
+    <title>Modifier un élève</title>
 </head>
 <body>
 <nav class="navbar bg-light">
@@ -53,6 +41,7 @@ if(isset($_POST['btn-modifier']))
 
   <div class="container mt-4">
     <h2>Modifier un Étudiant</h2>
+    <h2>Veuillez de bien remplir tout les champs</h2>
     <form method="POST" action="" enctype="multipart/form-data">
       <div class="row mt-2">
         <div class="col">
@@ -104,7 +93,7 @@ if(isset($_POST['btn-modifier']))
       </div><br>
       <label>Photo de l'etudiant | </label>
       <input class="form-file mt-2" type="file" name="image"><br>
-      <input class="btn btn-primary mt-3" type="submit" name="btn-ajouter">
+      <input class="btn btn-primary mt-3" type="submit" name="btn-modifier">
     </form>
   </div>
 

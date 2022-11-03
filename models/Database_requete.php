@@ -62,8 +62,14 @@ class Students extends Database
                 </div>
                 <div class=col-md-8>
                   <div class=card-body>
-                    <h5 class=card-title>".$row['student_prenom']."</h5>
-                    <p class=card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class=card-title>".$row['student_prenom']." ".$row['student_nom']."</h5>
+                    <p class=card-text>Age: ".$row['student_age']."</p>
+                    <p class=card-text>Sexe: ".$row['student_genre']."</p>
+                    <p class=card-text>Diplome: ".$row['student_diplome']."</p>
+                    <p class=card-text>Email: ".$row['student_email']."</p>
+                    <p class=card-text>Adresse: ".$row['student_adresse']."</p>
+                    <p class=card-text>Numero de telephone: ".$row['student_numero_telephone']."</p>
+                    <p class=card-text>Filiere voulus: ".$row['student_speciality']."</p>
                     <br>
                     <br>
                   </div>
@@ -117,7 +123,6 @@ class Students extends Database
       $specialite = $_POST['specialite'];
       $image = $_FILES['image']['name'];
 
-      $id= $_REQUEST['id'];
       $sql="UPDATE student SET student_prenom='$prenom',student_nom='$nom ',student_age='$age',student_genre='$genre',student_diplome='$diplome',student_email='$email',student_adresse='$adresse',student_numero_telephone='$telephone',student_speciality='$specialite',photo_student='$image' WHERE student_id = $id";
       $stmt = $this->connexionDB()->query($sql);
 
@@ -130,6 +135,9 @@ class Students extends Database
         $stmt = $this->connexionDB()->query($sql);
 
         if ($stmt) {
+          echo'<div class=container>
+                  <h2 class=mt-3>Résultat:</h2>
+               </div>';
          while ($etudiant = $stmt->fetch()) 
          {
           echo "
@@ -140,12 +148,18 @@ class Students extends Database
               <div class=card>
               <div class=row g-0>
                 <div class=col-md-3 align-items-center>
-                  <img src=./assets/profil_student/".$etudiant['student_prenom']." class=img-fluid rounded-start>
+                  <img src=./assets/profil_student/".$etudiant['photo_student']." class=img-fluid rounded-start>
                 </div>
                 <div class=col-md-8>
                   <div class=card-body>
-                    <h5 class=card-title>".$etudiant['student_prenom']."</h5>
-                    <p class=card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class=card-title>".$etudiant['student_prenom']." ".$etudiant['student_nom']."</h5>
+                    <p class=card-text>Age: ".$etudiant['student_age']."</p>
+                    <p class=card-text>Sexe: ".$etudiant['student_genre']."</p>
+                    <p class=card-text>Diplome: ".$etudiant['student_diplome']."</p>
+                    <p class=card-text>Email: ".$etudiant['student_email']."</p>
+                    <p class=card-text>Adresse: ".$etudiant['student_adresse']."</p>
+                    <p class=card-text>Numero de telephone: ".$etudiant['student_numero_telephone']."</p>
+                    <p class=card-text>Filiere voulus: ".$etudiant['student_speciality']."</p>
                     <br>
                     <br>
                   </div>
@@ -158,11 +172,6 @@ class Students extends Database
           echo 'aucun etudiant trouvé';
         }
     
-    }
-
-    public function filterStudents()
-    {
-      
     }
 }
 

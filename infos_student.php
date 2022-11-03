@@ -27,7 +27,7 @@ if(isset($_POST['btn-supp']))
 <body>
   <nav class="navbar bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php">Accueil</a>
+      <a class="navbar-brand" href="./index.php">Accueil</a>
     </div>
   </nav>
 
